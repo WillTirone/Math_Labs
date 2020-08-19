@@ -1,18 +1,127 @@
 \documentclass[11pt]{article}
-\usepackage{amsmath} 
+\usepackage{amsmath, amsthm, amssymb} 
 \begin{document}
 
 \title{MAT 561 Review} 
 \date{} 
 \maketitle	
 
-\begin{equation}
-f(x) = P(X=x) 
-\end{equation}
+\section{Univariate} 
 
-\begin{equation}
-F(x) = P(X\leq{x})
-\end{equation}
+\subsection*{PDF:}
+\begin{align*} 
+& PDF = f(x) = P(X=x)\\
+\textbf{Properties} \\
+& f(x) \geq 0 \\
+& \sum_{x \in R}^{} f(x) = 1 
+\end{align*}
 
-I am typing some text now with math \(x = y^2\) and also text 
+\subsection*{CDF:}
+\begin{align*}
+F(x) &= P(X \leq x) \\
+	 &= \sum_{x \in a}^{} P(X=a)\\
+\textbf{Properties} \\
+&P(X>c) = 1 - P(X \leq c)\\ 
+&P(X=c) = P(X \leq c) - P(X \le c)
+\end{align*}
+
+\subsection*{Expected Value:}
+\begin{align*}
+\mu &= E(x) \\
+	&= \sum_{x \in R}^{} x \cdot P(X=a) \\
+	\text{more generally...} \\ 
+	& \mu = E(g(x)) \\ 
+	&= \sum_{i=1}^{\infty}g(x_i) \cdot P(X=x_i)
+\end{align*}
+
+\subsection*{Variance:}
+\begin{align*}
+\sigma &= Var(x) \\
+	&= E(X-\mu)^2 \\ 
+	&= E(X^2) - E((X)^2) 
+\end{align*}
+
+\subsection*{MGF:}
+\begin{align*}
+M_x(t) &= E(e^{tx}) \\ 
+&= \sum_{x \in R}e^{tx} f(x) \\
+\text{and} \\
+&M^{n}(0) = E(X^n) \\
+\text{some common cases} \\
+&M_{x+a} = e^{at}M_x(t)\\
+&M_{bx}(t) = M_x(bt) \\
+&M_\frac{x+a}{b}(t) = e^{\frac{at}{b}}M_x\frac{t}{b} \\ 
+&M_{X+Y}(t) = M_X(t)M_Y(t) & \text{only by independence!} 
+\end{align*}
+
+\subsection*{Theorems:}
+$$E(aX +b) = aE(x) + b$$
+$$Var(aX + b) = a^2Var(x)$$
+
+\subsection*{For distributions, see here:}
+http://matthias.vallentin.net/blog/2010/10/probability-and-statistics-cheat-sheet/
+
+\subsection*{Common Series in Probability:}
+\begin{align*}
+&\sum_{n=0}^{\infty} \frac{x^n}{n!} = e^x  & x \in R \\ 
+&\sum_{n=0}^{\infty} x^n = \frac{1}{1-x} & -1 \le x \le 1
+\end{align*}
+
+\section{Discrete Bivariate}
+\begin{align*}
+&f(x,y) = P(X=x,Y=y)\\
+&f(x,y) \geq 0\\
+&\sum_{x\in R_x}^{} \sum_{y \in R_y}^{} f(x,y) = 1
+\end{align*}
+
+\subsection*{Discrete Marginal Density Functions}
+\begin{align*}
+&f_x(x) = P(X=x) \sum_{y \in R_y}^{} P(X=x, Y=y) \\
+&f_y(y) = P(Y=y) \sum_{x \in R_x}^{} P(X=x, Y=y) \\
+&f(x,y) = f_x(x)f_y(y) & \text{by independence}
+\end{align*}
+
+\subsection*{Assorted Properties}
+\begin{align*}
+&E(XY) = E(X)E(Y) & \text{by independence} \\
+\\
+&COV(X,Y) = E(XY) - E(X)E(Y) \\
+\\
+&\rho = \frac{COV(X,Y)}{\sigma_x \sigma_y}
+\\
+&VAR(X+Y) = VAR(X) + VAR(Y) &\text{by independence} \\
+&VAR(X+Y) = VAR(X) = VAR(Y) + 2COV(X,Y) &\text{without independence}
+\\
+&\text{some additional properties of covariance in handwritten notes if needed}
+\end{align*}
+
+\subsection*{Calculating Continuous Univariate Probabilities}
+\begin{align*}
+&P(a \leq x \leq b) = \int_{a}^{b} f(x) dx\\ 
+&P(X>c) = \int_{c}^{\infty} f(x) dx\\
+&E(g(x)) = \int_{-\infty}^{\infty} g(x) f(x) dx
+\end{align*}
+
+\subsection*{CDF Method to find PDF}
+$\frac{d}{dy}F(y) = f(y)$ where F(y) is the CDF and f(y) is the PDF
+
+\subsection*{Jointly Continuous Random Variables}
+\begin{align*}
+&f(x,y) \geq 0 \\
+& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  f(x,y) dydx = 1\\
+&\text{note that for the marginals, you are integrating "out" one of the vars}\\
+&f_x(x) = \int_{y=-\infty}^{\infty} f(x,y)dy\\
+&f_y(y) = \int_{x=-\infty}^{\infty} f(x,y)dx\\
+& E(XY) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  xyf(x,y) dydx = 1\\
+\end{align*}
+
+Conditional notes are in handwritten set if needed 
+
+\subsection*{Limit Theorems}
+The central limit theorem states that if you have a population with mean $\mu$ and standard deviation $\sigma$ and take sufficiently large random samples from the population with replacement , then the distribution of the sample means will be approximately normally distributed. Additionally, can only be applied if: 
+$$x_1, x_2, ... \text{are iid } $$ 
+$$\sigma^2 \le \infty$$
+$$ n \geq 32 $$ 
+Also see notes on the SLLN and WLLN. 
+
 \end{document}
