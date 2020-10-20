@@ -1,5 +1,5 @@
 # Math Labs
-A repository for labs using MATLAB from Differential Equations and Linear Algebra. Because GitHub has difficult rendering .mlx files, which display inline output similar to a Jupyter Notebook, I have linked directly to the PDF output below. If you're interested in the .m or .mlx files used to generate the output, they are also included in the respective folders. 
+A repository for labs using MATLAB from Differential Equations and Linear Algebra. Because GitHub has difficulty rendering .mlx files, which display inline output similar to a Jupyter Notebook, I have linked directly to the PDF output below. If you're interested in the .m or .mlx files used to generate the output, they are also included in the respective folders. 
 
 ## Linear Algebra - MAT 343 
 [LAB 1: ](https://github.com/WillTirone/Math_Labs_and_Notes/blob/master/Lin_Alg_MAT343/lab%201/Lab%201%20Will%20Tirone.pdf) - An introduction to MATLAB and performing some basic matrix manipulation and calculations. 
