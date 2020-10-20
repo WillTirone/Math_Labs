@@ -4,7 +4,7 @@ A repository for labs using MATLAB from Differential Equations and Linear Algebr
 ## Linear Algebra - MAT 343 
 [LAB 1: ](https://github.com/WillTirone/Math_Labs_and_Notes/blob/master/Lin_Alg_MAT343/lab%201/Lab%201%20Will%20Tirone.pdf) - An introduction to MATLAB and performing some basic matrix manipulation and calculations. 
 
-[LAB 2: ](https://github.com/WillTirone/Math_Labs_and_Notes/blob/master/Lin_Alg_MAT343/lab2/TIRONE_MAT343_LAB2.pdf) - Exploring how MATLAB solves equations with matrices, particularly `Ax = b` by comparing solutions using left division or the inverse of the matrix. 
+[LAB 2: ](https://github.com/WillTirone/Math_Labs_and_Notes/blob/master/Lin_Alg_MAT343/lab2/TIRONE_MAT343_LAB2.pdf) - Exploring how MATLAB solves equations with matrices, particularly **Ax=b** by comparing solutions using left division or the inverse of the matrix. 
 
 [LAB 4: ](https://github.com/WillTirone/Math_Labs_and_Notes/blob/master/Lin_Alg_MAT343/lab4/LAB_4_TIRONE.pdf) - Looking at rotation, reflection, and shearing matrices along with their plots. 
 
